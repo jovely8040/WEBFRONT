@@ -4,6 +4,35 @@
         <meta http-equiv="Content-Type"
             content="text/html;charset=UTF-8" />
         <title>멤버십 가입</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <style>
+            /* 속성 선택자 */
+            *[type] { /* type 속성이 있는 모든 태그 선택 */
+                background-color: beige;
+            }
+
+            input[type=text] { /* type속성이 text인 input 태그 선택*/
+                background-color: lightgreen;
+            }
+
+            input[type=password] { /* type속성이 password인 input태그 선택 */
+                background-color: lightblue;
+            }
+
+            /* 상태 선택자: 입력폼의 상태에 따른 선택 가능*/
+            input:enabled { /* 입력 가능한 input태그 선택*/
+                background-color: white;
+            }
+
+            input:disabled { /* 입력 불가능한 input태그 선택*/
+                background-color: gray;
+            }
+
+            input:focus { /* 초점이 맞춰진 상태의 input태그 선택*/
+                background-color: orange;
+            }
+
+        </style>
     </head>
     <body>
         <h1>멤버십 가입</h1>
@@ -19,6 +48,9 @@
                 
                 <label for="password">비밀번호</label>
                 <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요" /><br/>
+                
+                <label for="code">추천 코드</label>
+                <input type="text" name="code" id="code" disabled /><br/>
                 <!-- 사용자 입력은 아니고, 폼 처리시 반드시 필요한 값: 개발자 세팅 -->
                 <input type="hidden" name="secret_code" value="secret" />
                 
