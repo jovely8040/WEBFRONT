@@ -55,7 +55,22 @@
       후손 선택자 (공백) : 직계 포함한 모든 자손들
       */
       .beverage p { /* beverage 클래스의 후손 p태그 선택 */
-        font-weight: bold;
+        /*
+        font-weight 속성: 글꼴의 두께
+        normal, lighter, boid, bolder
+        */
+        font-weight: lighter;
+        /*
+        font-size 속성: 글꼴의 크기
+        기본 사이즈는 16px;
+        절대 크기: px
+        상대크기: em(배율), %(퍼센트)
+        */
+        font-size: 1.1em; /* 110%와 동일 */
+      }
+
+      .beverage h2 {
+        font-size: 1.5em; /* 1.5em = 150% = 24px */
       }
 
       /* 구조선택자 */
@@ -73,6 +88,12 @@
 
       .menu > li:last-child {
         background-color: rgba(255,0,0,0.3);
+      }
+
+      .feature {
+        /* class=feature */
+        /* text-decoration 속성: 줄로 꾸미기 */
+        text-decoration: underline;
       }
 
     </style>
@@ -101,7 +122,7 @@
         <div>
           <h2>Green Tea Cooler</h2>
           <img src="images/green.jpg" alt="Green Tea Cooler" title="Green Tea Cooler" />
-          <p>Chock full of vitamins and minerals, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root.</p>
+          <p>Chock full of <span class="feature">vitamins and minerals</span>, this elixir combines the healthful benefits of green tea with a twist of chamomile blossoms and ginger root.</p>
         </div>
       </section>
       <section id="blue" class="blue beverage">
