@@ -8,35 +8,45 @@
     <style>
       /* id 셀렉터: #아이디 */
       #green { /* id가 green인 요소 */
-        color: green;
+        color: green; /* 키워드 */
+        color: #008000; /* 실제 값: 16진수 */
       }
 
       #blue {
         color: blue;
+        color: rgb(0,0,255); /* 실제 값: rgb 함수*/
       }
 
       #purple {
         color: purple;
+        color: #800080;
       }
 
       #red {
         color: red;
+        color: rgb(255,0,0);
       }
     
       /* class 셀렉터: .클래스 */
       .beverage.green {
+        /* alpha: 투명도 0.0(투명) ~ 1.0(불투명) */
         background-color: rgba(0,255,0,0.1);
+        background-color: #00ff0020;
       }
 
       .beverage.blue {
         background-color: rgba(0,0,255,0.1);
+        background-color: #0000ff20;
       }
 
       .beverage.purple {
         background-color: rgba(128,0,128,0.1);
+        background-color: #80008020;
       }
+
       .beverage.red {
         background-color: rgba(255,0,0,0.1);
+        background-color: #ff000020;
       }
 
       /*
