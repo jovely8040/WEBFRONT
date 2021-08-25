@@ -4,6 +4,60 @@
 <meta charset="utf-8">
 <title>리스트를 이용한 메뉴 만들기</title>
 <style type="text/css">
+/* 단계1 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "맑은고딕", 돋움, sans-serif;
+	font-size:  0.75em; /* = 75% */
+	color: #333; /* = #333333 */
+}
+
+.tab-box {
+    margin: 20px auto 0;
+    width: 520px;
+}
+
+/* 단계2 */
+ul {
+    list-style-type: none;
+
+    height: 27px; /* 단계4 */
+}
+
+li {
+    float: left;
+
+    width: 100px; /* 단계3 */
+    height: 22px;
+    border: 1px solid #999;
+    background-color: #ccc;
+    text-align: center;
+    padding-top: 3px;
+    margin-right: 2px;
+
+    border-top-left-radius: 10px; /* 단계4 */
+    border-top-right-radius: 10px;
+}
+
+/* 단계5 */
+.tab-box > div {
+    border: 1px solid #999;
+    margin-top: -1px;
+    text-align: center;
+    line-height: 200px;
+
+    width: 516px; /* 단계6 */
+}
+
+/* 단계7 */
+li.selected:hover {
+    background-color: #fc6;
+    cursor: pointer;
+}
 
 </style>
 <script src="" type="text/javascript"></script>
@@ -18,7 +72,7 @@
         <li>메뉴 5</li>
     </ul>
     <div>
-    	탭뷰입니다.
+        탭뷰입니다.
     </div>
 </div>    
 </body>
