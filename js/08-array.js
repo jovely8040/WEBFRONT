@@ -32,7 +32,7 @@ const person = {
     age: 28
 }
 // 객체의 속성 -> 배열처럼 접근 가능
-console.log(person.name, person['nemw']);
+console.log(person.name, person['name']);
 console.log(person.age, person['age']);
 
 // 인덱스를 엄격히 체크하지 않는다
@@ -128,3 +128,19 @@ fruits.sort(function(v1, v2){
     if (v1 > v2) return -1;
 });
 console.log("SORT(User Defined):", fruits);
+
+console.log("----- split");
+// 특정 구분자를 기준으로 문자열 분리 -> Arrays 반환
+const str = "JavaScript is something strange than other languages";
+let chunks = str.split(" "); // 공백으로 분리
+console.log("SPLIT:", chunks);
+
+// loop 1:
+for (let i = 0; i < chunks.length; i++) {
+    console.log("WORD:", chunks[i]);
+}
+
+// loop 2:
+for (let word of chunks) {
+    console.log("for of:", word);
+}
