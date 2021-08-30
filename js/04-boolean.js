@@ -27,6 +27,7 @@ console.log("수치형:", Boolean(2021), Boolean(0));
 let content = "CONTENTS";
 
 console.log(true && content); // -> CONTENTS 선택
-console.log(false && content); // false
-console.log(true || content); // true (content가 true든 false든 상관없음)
-console.log(false || content); // CONTENTS 선택
+console.log(false && content); // -> false
+
+console.log(true || content); // -> true (content가 true든 false든 상관없음)
+console.log(false || content); // -> CONTENTS 선택
