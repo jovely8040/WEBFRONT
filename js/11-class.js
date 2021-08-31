@@ -46,3 +46,4 @@ class Circle extends Shape {
 
 let c = new Circle(0, 0, 10);
 console.log(c, c.area());
+
