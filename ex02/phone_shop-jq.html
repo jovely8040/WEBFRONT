@@ -95,6 +95,43 @@
             $(subs[i]).attr("title", "사진:" + $(subs[i]).attr("title"));
         }
     }
+    testAttributes();
+
+    $("#main-image").on("click", function(event) {
+        console.log(event);
+        console.log("이벤트 발생 객체:", event.target);
+
+        alert($(event.target).attr("title"));
+    });
+
+    // 이벤트 리스너 부착
+    $(document).ready(function() {
+        // 페이지 초기화 수행
+        $("#keyword").on("keyup", function(event) {
+            console.log(event); // 이벤트 정보 객체
+            console.log(event.target); // 이벤트 발생 객체
+            console.log("눌러진 키:", event.keyCode);
+
+            $("#btn-search").text($(event.target).val() + ":검색");
+        })
+
+        // class가 sub-image인 모든 요소들 검색
+        let products = $(".sub-image");
+        // jQuery는 검색된 요소가 여러개여도 루프를 돌리지 않아도 됨
+        products.on("click", function(event) {
+            let obj = $(event.target);
+            let mainImage = $("#mainImage"); // 아이디가 메인이미지인 요소 검색
+            mainImage.attr({
+                src: obj.attr('src'),
+                title: obj.attr('title')
+            }); // 여러 속성을 동시에 설정할 때는 JavaScript 객체
+
+            let title = $("#product-info h2");
+            title.html(obj.attr("title"));
+            title.css("background-color", obj.data("color"));
+        })
+    });
+
 </script>
 
 </html>
