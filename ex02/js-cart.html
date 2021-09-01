@@ -66,7 +66,10 @@
                 itemNode.appendChild(toolbar); // toolbar를 itemNode에 자식으로 추가
 
                 // 3. 트리에 추가 (부모 요소에 Child로 추가 .appendChild)
-                container.appendChild(itemNode);
+                let firstItem = container.children[0];
+                // 기준이 되는 노드
+                container.insertBefore(itemNode, firstItem); // 기준노드: firstItem
+                // container.appendChild(itemNode);
             }
 
             itemInput.value = "";
