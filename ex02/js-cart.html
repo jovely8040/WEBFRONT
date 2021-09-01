@@ -43,6 +43,28 @@
                 let itemNode = document.createElement("li");
                 // 2. 새 요소에 속성과 콘텐츠 설정
                 itemNode.innerHTML = item;
+                
+                // li 추가시 삭제 버튼 생성 
+                let toolbar = document.createElement("div");
+                toolbar.style.display = "inline";
+                let delBtn = document.createElement("button");
+                delBtn.innerText = "삭제";
+                delBtn.style.cssFloat = "right";
+
+                // 클릭이 발생했을 때 이벤트 추가, 이벤트 함수 연결
+                delBtn.addEventListener("click", function(event) {
+                    console.log(event);
+                    // 삭제할 요소
+                    let removeItem = event.target.parentNode.parentNode;
+                    console.log("삭제할 요소:", removeItem);
+                    // 부모 요소 찾기
+                    let parent = removeItem.parentNode;
+                    // 부모로부터 자식 분리
+                    parent.removeChild(removeItem);
+                });
+                toolbar.appendChild(delBtn); // delBtn을 toolbar에 자식으로 추가
+                itemNode.appendChild(toolbar); // toolbar를 itemNode에 자식으로 추가
+
                 // 3. 트리에 추가 (부모 요소에 Child로 추가 .appendChild)
                 container.appendChild(itemNode);
             }
@@ -54,7 +76,11 @@
         window.addEventListener("load", function(event) {
             // 추가 버튼을 눌렀을 때의 이벤트 연결
             document.getElementById("btn-add").addEventListener("click", addItem);
+            // 리스트 초기화
+            let items = document.querySelectorAll("#list > li");
+            for (let i = 0; i < items.length; i++) {
+                items[i].parentNode.removeChild(items[i]);
+            }
         })
-
     </script>
 </html>
