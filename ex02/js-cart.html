@@ -28,4 +28,33 @@
             &copy;Bit Academy
         </div>
     </body>
+    <script>
+        function addItem(event) {
+            console.log(event);
+            let itemInput = document.getElementById("item");
+            let item = itemInput.value.trim();
+
+            if (item.length > 0) {
+                // 새 노드를 생성
+                // ul#list에 자식으로 추가
+                // 부모찾기
+                let container = document.getElementById("list");
+                // 1. li 노드 생성 (새로운 요소 만들기 .createElement)
+                let itemNode = document.createElement("li");
+                // 2. 새 요소에 속성과 콘텐츠 설정
+                itemNode.innerHTML = item;
+                // 3. 트리에 추가 (부모 요소에 Child로 추가 .appendChild)
+                container.appendChild(itemNode);
+            }
+
+            itemInput.value = "";
+            itemInput.focus();
+        }
+
+        window.addEventListener("load", function(event) {
+            // 추가 버튼을 눌렀을 때의 이벤트 연결
+            document.getElementById("btn-add").addEventListener("click", addItem);
+        })
+
+    </script>
 </html>

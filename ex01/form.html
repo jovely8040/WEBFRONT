@@ -37,7 +37,8 @@
             // 멤버십 가입 검증 폼 만들기
             function checkForm() {
                 // 폼 name으로 식별
-                let frm = document.registerForm;
+                // let frm = document.registerForm;
+                let frm = document.getElementById("myform");
                 console.log(frm);
 
                 // userid 검증
@@ -85,7 +86,8 @@
     </head>
     <body>
         <h1>멤버십 가입</h1>
-        <form name="registerForm"
+        <form id="myform"
+            name="registerForm"
             method="POST"
             action="/register.html"
             onsubmit="return checkForm();">
